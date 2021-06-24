@@ -19,6 +19,7 @@ html {
   --background: #fbfcff;
   --icons-details: #a5b0c1;
   --grey-dark: #4d5e77;
+  --grey-medium: #eaecf2;
   --grey-blue: #a1b2cd;
   --grey-light: #e5eaf1;
 
@@ -28,8 +29,8 @@ html {
 
 /* ===== ABRE LAYOUT =============== */
 body {
+  display: flex;
   height: 100vh;
-  width: 100vw;
   background: var(--background);
 }
 body,
@@ -95,5 +96,15 @@ button.outlined,
   background: var(--white);
   color: var(--blue);
   border: 0.2rem solid var(--blue);
+}
+button.red,
+.button.red {
+  background: var(--red);
+  color: var(--white);
+}
+button.grey,
+.button.grey {
+  background: var(--grey-light);
+  color: var(--grey-dark);
 }
 /* ===== FECHA LAYOUT =============== */
