@@ -1,0 +1,31 @@
+{
+  "name": "rocket.q",
+  "version": "1.0.0",
+  "description": "NLW#06-Discover: Front=EJS/ Back=NodeJs: Express/ DB=MySql",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon .",
+    "init-db": "node src/db/init.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiogoMalfatti/rocket.q.git"
+  },
+  "keywords": [],
+  "author": "Diogo Malfatti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiogoMalfatti/rocket.q/issues"
+  },
+  "homepage": "https://github.com/DiogoMalfatti/rocket.q#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
