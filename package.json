@@ -1,7 +1,7 @@
 {
   "name": "rocket.q",
   "version": "1.0.0",
-  "description": "NLW#06-Discover: Front=EJS/ Back=NodeJs: Express/ DB=MySql",
+  "description": "NLW#06-Discover: Front=EJS/ Back=NodeJs: Express/ DB=SQLite: Beekeeper",
   "main": "src/server.js",
   "scripts": {
     "start": "nodemon .",
