@@ -23,11 +23,11 @@
           <img src="/images/logo.svg" alt="logotipo rocket.q" />
         </a>
         <div class="buttons">
-          <div class="button outlined" id="room-id" data-id="323243">
-            #323243
+          <div class="button outlined" id="room-id" data-id="<%= roomId %>">
+            #<%= roomId %>
             <img src="/images/copy.svg" alt="" />
           </div>
-          <a href="#" class="button">
+          <a href="/create-pass" class="button">
             <img src="/images/users-white.svg" alt="" />
             Criar Sala
           </a>
@@ -40,7 +40,7 @@
         <!-- ABRE QUESTION FORM -->
         <section id="question-form">
           <h2>Faça sua pergunta</h2>
-          <form action="">
+          <form action="/question/create/<%= roomId %>" method="POST">
             <label for-id="question" class="sr-only">
               O que você quer perguntar?
             </label>
@@ -65,62 +65,46 @@
         <section id="questions">
           <h2 class="sr-only">Perguntas da comunidade</h2>
           <div class="questions">
+            <% if(isNoQuestions) { %> <%- include('parts/no-question') %> <% }%>
+            <% questions.forEach(question => { %>
             <div class="question-wrapper">
               <div class="question-content">
                 <div class="user">
                   <img src="/images/user-white.svg" alt="" />
                 </div>
                 <div class="question">
-                  <p>Qual a diferença entre const, var e let no Javascript?</p>
+                  <p><%= question.title %></p>
                 </div>
               </div>
               <div class="actions">
-                <a href="#" class="check" data-id="2">
+                <a href="#" class="check" data-id="<%= question.id %>">
                   <img src="/images/check .svg" alt="" />
                   Marcar como lida
                 </a>
-                <a href="#" class="delete" data-id="2">
+                <a href="#" class="delete" data-id="<%= question.id %>">
                   <img src="/images/trash.svg" alt="" />
                   Excluir
                 </a>
               </div>
             </div>
-            <div class="question-wrapper">
-              <div class="question-content">
-                <div class="user">
-                  <img src="/images/user-white.svg" alt="" />
-                </div>
-                <div class="question">
-                  <p>O que é Typescript?</p>
-                </div>
-              </div>
-              <div class="actions">
-                <a href="#" class="check" data-id="3">
-                  <img src="/images/check .svg" alt="" />
-                  Marcar como lida
-                </a>
-                <a href="#" class="delete" data-id="3">
-                  <img src="/images/trash.svg" alt="" />
-                  Excluir
-                </a>
-              </div>
-            </div>
+            <% }); %> <% questionsRead.forEach(questionRead => { %>
             <div class="question-wrapper read">
               <div class="question-content">
                 <div class="user">
                   <img src="/images/user-white.svg" alt="" />
                 </div>
                 <div class="question">
-                  <p>O que é Javascript?</p>
+                  <p><%= questionRead.title %></p>
                 </div>
               </div>
               <div class="actions">
-                <a href="#" class="delete" data-id="1">
+                <a href="#" class="delete" data-id="<%= questionRead.id %>">
                   <img src="/images/trash.svg" alt="" />
                   Excluir
                 </a>
               </div>
             </div>
+            <% }); %>
           </div>
         </section>
         <!-- FECHA QUESTIONS -->
